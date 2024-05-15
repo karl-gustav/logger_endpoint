@@ -1,0 +1,4 @@
+github.com/go-chi/chi/v5 v5.0.12 h1:9euLV5sTrTNTRUU9POmDUvfxyj6LAABLUcEWO+JJb4s=
+github.com/go-chi/chi/v5 v5.0.12/go.mod h1:DslCQbL2OYiznFReuXYUmQ2hGd1aDpCnlMNITLSKoi8=
+github.com/karl-gustav/runlogger v1.0.0 h1:v9eDc2H+VopzCglQXvZ+EOEZKet1Le0PCTqSaYTWDdk=
+github.com/karl-gustav/runlogger v1.0.0/go.mod h1:Fm9SKv1KcMKXSw1VYi7TNQyf3q4bL1I6dq1ik5OIVsQ=
