@@ -26,12 +26,15 @@ func main() {
 	r := chi.NewRouter()
 	r.HandleFunc("/*", func(w http.ResponseWriter, r *http.Request) {
 		body, _ := io.ReadAll(r.Body)
+		j := map[string]interface{}{}
+		_ = json.Unmarshal(body, &j)
 		log.Info(
 			r.Method+" "+fullURL(r),
 			log.Field("url", fullURL(r)),
 			log.Field("method", r.Method),
 			log.Field("body", string(body)),
 			log.Field("headers", r.Header),
+			log.Field("json", j),
 		)
 		w.Header().Set("Content-Type", "application/json")
 		err := json.NewEncoder(w).Encode(map[string]any{
@@ -39,6 +42,7 @@ func main() {
 			"method":  r.Method,
 			"body":    string(body),
 			"headers": r.Header,
+			"json":    j,
 		})
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
